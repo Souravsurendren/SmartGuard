@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #4299e1;
+  --primary-dark: #2b6cb0;
+  --secondary: #7f9cf5;
+  --neutral-100: #f7fafc;
+  --neutral-200: #edf2f7;
+  --neutral-300: #e2e8f0;
+  --neutral-400: #cbd5e0;
+  --neutral-500: #a0aec0;
+  --neutral-600: #718096;
+  --neutral-700: #4a5568;
+  --neutral-800: #2d3748;
+  --neutral-900: #1a202c;
+  --success: #2f855a;
+  --warning: #dd6b20;
+  --danger: #e53e3e;
+  --radius: 10px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+/* Apply basic styling to the container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the heading */
+h2 {
+  font-size: xx-large;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Cards container: Responsive grid */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 20px; /* Spacing between cards */
+  border-top: #2b6cb0 4px solid;
+  border-radius: 4px;
+  border-bottom: #2b6cb0 4px solid;
+  box-shadow: black 0px 4px 10px; 
+}
+
+/* Individual Card Styling */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+/* Card text styling */
+.card h3 {
+  font-size: large;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Make booked time bold */
+.card p strong {
+  color: #222;
+}
+
+/* Responsive Grid Layout for Larger Screens */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .card {
+    background-color: white;
+    color: black;
+  }
+
+  .card h3 {
+    color: black;
+  }
+
+  .card p {
+    color: black;
+    padding-top: 20px;
+  }
+}
